@@ -1,0 +1,386 @@
+/*Para Dark Mode*/
+:root{
+--back-color: rgb(255, 255, 255);
+--nav-color: rgb(255, 255, 255);
+--navbar-icons: black;
+--navbar-a: black;
+--nav-h1: rgb(0, 0, 0);
+--login-form: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+--login-FontColor: rgb(0, 0, 0);
+--login-button: black;
+--login-ButtonFont: white;
+--register-button: black;
+--register-font: white;
+--theme-back: rgb(255, 255, 255);
+--theme-button: rgb(0, 0, 0);
+--create-post: #ffffff;
+--create-post-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+--create-post-textarea: 1px solid #ccc;
+--create-post-submitbtn-background: #003366;
+--create-submitbtn-post: #fff;
+}.darkmode{
+    --back-color: rgb(0, 0, 0);
+    --nav-color: rgb(0, 0, 0);
+    --navbar-icons: rgb(255, 255, 255);
+    --navbar-a: rgb(255, 255, 255);
+    --nav-h1: rgb(255, 248, 248);
+    --login-form: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    --login-FontColor: rgb(0, 0, 0);
+    --login-button: rgb(255, 255, 255);
+    --login-ButtonFont: rgb(0, 0, 0);
+    --register-button: rgb(255, 255, 255);
+    --register-font: rgb(0, 0, 0);
+    --theme-back: rgb(255, 255, 255);
+    --theme-button: rgb(0, 0, 0);
+    --create-post: #1e1e1e;
+    --create-post-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    --create-post-textarea: 1px solid #555;
+    --create-post-submitbtn-background: #336699;
+    --create-submitbtn-post: #ffffff;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding:0;
+    border-radius: 50%;
+    background-color: var(--theme-back);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}#theme-switch svg{
+    fill: var(--theme-button);   
+}#theme-switch svg:last-child{
+    display: none;
+}.darkmode #theme-switch svg:first-child{
+    display: none;
+}.darkmode #theme-switch svg:last-child{
+    display: block;
+}body {
+    background-color: var(--back-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+/*Para Navbar*/
+.navbar {
+    text-align: center;
+    background-color: var(--nav-color);
+    line-height: 3em;
+    box-shadow: 0px 0px 2px 2px #ffffff;
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    top: 0;
+    left: 0; 
+    padding-top: 20px; /* Padding para dili mo lapas sa babaw*/
+}
+
+.navbar h1 {
+    color: var(--nav-h1);
+    margin-bottom: 20px; /* Space between title and links */
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style: none; /*  para removes bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: block;
+    margin: 10px 0; /* Adds spacing between each nav itmes */
+}
+
+.navbar a {
+    display: block;
+    color: var(--navbar-a);
+    text-decoration: none;
+    font-size: 25px;
+    padding: 15px;  
+    margin: 5px auto;
+    width: 90%; 
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #7e7777;
+    width: 85%;
+    height: 95%;
+}
+
+.navbar a:active {
+    background-color: #000000;
+    color: #5a0b56;
+}
+.logged-out .navbar {
+    box-shadow: none;
+}
+.navbar {
+    transition: box-shadow 0.3s ease-in-out;
+}
+    /*icons*/
+.navbar .fa-home {
+    color: var(--navbar-icons); /* change icon color */
+    font-size: 25px; /* adjust size */
+    margin-right: 10px; /* spacing between icon and text */
+}.navbar .fa-image  {
+    color: var(--navbar-icons);
+    font-size: 25px;
+    margin-right: 9px;
+}.navbar .fa-user  {
+    color: var(--navbar-icons);
+    font-size: 25px;
+    margin-right: 15px;
+}.navbar .fa-sliders{
+    color: var(--navbar-icons);
+    font-size: 25px;
+    margin-right: 12px;
+}
+/*Para Log in*/
+#loginform {
+    background: transparent;
+    color: var(--login-FontColor);
+    width: 25vh;
+    padding: 2em;
+    margin: 10vh auto;
+    border-radius: 10px;
+
+}
+
+#loginform input {
+    margin: .5em;
+    padding: .5em;
+}
+
+#loginform input[type='submit'] {
+    width: 25vh;
+    color: var(--login-ButtonFont);
+    background-color: var(--login-button);
+    border: none;
+    border-radius: 5px;
+    padding: .8em;
+}
+
+#loginform input[type='submit']:hover {
+    background-color: #cccc00;
+}
+
+#loginform input[type='submit']:active {
+    background-color: #ff0033;
+}
+
+#loginform input[type='checkbox'] {
+    width: 10%;
+}
+
+#gender {
+    margin: .5em;
+    padding: .5em;
+    width: 98%;
+    /*Special ni Para sa log in with registration*/
+}.container {
+    margin: 10vh auto;
+    width: 20%;
+    padding: 10px;
+    background: var(--login-form);
+    border-radius: 10px;
+    text-align: center; 
+}.container a{
+    text-decoration: none;
+    list-style: none;
+
+}.register-btn {
+    display: inline-block;
+    background-color: var(--register-button);
+    color: var(--register-font);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+.register-btn:hover {
+    background-color: #cccc00;
+}
+
+.register-btn:active {
+    background-color: #ff0033;
+}
+
+    /*Para Registration*/
+#registerform {
+    margin: 10vh auto;
+    width: 14%;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: #091961;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center; 
+}
+#registerform input {
+    margin: .5em;
+    padding: .5em;
+}
+
+#registerform input[type='submit'] {
+    width: 25vh;
+    background-color: #003366;
+    border: none;
+    border-radius: 5px;
+    padding: .8em;
+}
+
+#registerform input[type='submit']:hover {
+    background-color: #cccc00;
+}
+
+#registerform input[type='submit']:active {
+    background-color: #ff0033;
+}
+
+#registerform input[type='checkbox'] {
+    width: 10%;
+}
+
+#gender {
+    margin: .5em;
+    padding: .5em;
+    width: 98%;
+}.upload-form {
+    position: absolute;
+    right: 25%;
+    top: 30px;
+   
+    background-color: #f4f4f4; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input[type="file"] {
+    border: 2px solid #007bff; /* para border */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*For File List*/
+.file-box {
+    position: absolute;
+    right: 25%;
+    width: 250px;  
+    height: 200px; 
+    background: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-y: auto; /* para scroll */
+}
+
+.file-box h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.file-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.file-box li {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.file-box a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.file-box a:hover {
+    text-decoration: underline;
+}
+/*For Error Message*/
+.error_msg{
+    font-size: .8em;
+    color: #cc0000;
+    
+}
+/*Para Post box*/
+.create_post {
+    position: absolute;
+    top: 20vh;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 40%;
+    background-color: var(--create-post);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--create-post-shadow);
+    
+}
+
+.create_post textarea {
+    width: 96%;
+    height: 50px;
+    padding: 10px;
+    resize: none;
+    font-size: 1em;
+    border-radius: 5px;
+    border: var(--create-post-textarea);
+    margin-bottom: 10px;
+}
+
+.create_post input[type="submit"] {
+    background-color: var(--create-post-submitbtn-background);
+    color: var(--create-submitbtn-post);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.create_post input[type="submit"]:hover {
+    background-color: #333;
+}
+
+
+/*para sa text post*/
+
+
+.post-container {
+    position: absolute;
+    left: 16%; /* Distance from the left side */
+    top: 20px; /* Distance from the top */
+    width: 350px; /* Set the width of the container */
+    max-height: 400px; /* Set the maximum height of the container */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.post {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post + .post {
+    margin-top: 10px;
+}
+
